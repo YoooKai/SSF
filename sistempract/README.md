@@ -127,7 +127,7 @@ TEN EN CUENTA que en clase hemos visto que para lanzar comandos de forma que no 
 
 13. Aunque la aplicación que lanzaste en el apartado anterior fue enviada con menos prioridad, la máquina ha empezado a ir cada vez más lenta. Haz que esta aplicación que sigue en ejecución, empeore su prioridad en otros 5 puntos. 
 
-**renice -5 xeyes —no del todo bien**
+**renice -n 10 1234**
 
 14. Parece que el equipo ya va mejor, indica el comando que usarías para dejar la aplicación anterior con su prioridad inicial. 
 
@@ -141,7 +141,7 @@ TEN EN CUENTA que en clase hemos visto que para lanzar comandos de forma que no 
 
 16. Lista todos los procesos en MS Windows que consuman más de 1MiB de memoria. 
 
-**—en blanco**
+**tasklist /fi "MEMUSAGE gt 1024"**
 
 Lanza un bloc de notas (notepad.exe) con la prioridad más baja posible. 
 
@@ -157,7 +157,7 @@ Vuelve a dejar al Bloc de Notas en su prioridad normal.
 
 Finaliza el Bloc de Notas de forma inmediata. 
 
-**taskkill /PID 1234 --no del todo bien**
+**taskkill /F /PID 1234**
 
 
 <br>

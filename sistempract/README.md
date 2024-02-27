@@ -170,7 +170,7 @@ TEN EN CUENTA que en clase hemos visto que para lanzar comandos de forma que no 
 
 ## Comandos de Procesos
 
-## Comandos para gestionar procesos
+### LINUX
 
 - `ps` (opciones: aux, fea, -p, -o, ...): Muestra información sobre los procesos en ejecución.
 - `pstree`: Muestra la jerarquía de procesos en forma de árbol.
@@ -228,11 +228,9 @@ TEN EN CUENTA que en clase hemos visto que para lanzar comandos de forma que no 
 - Todos los procesos tienen un proceso padre.
 - `nohup` al lanzar el proceso o `disown` si ya se ejecutó para evitar cierre con la terminal.
 
-# PROCESOS EN BATCH / WINDOWS 
+## Resumen de Procesos (y comandos) en MS Windows (cmd)
 
-# Resumen de Procesos (y comandos) en MS Windows (cmd)
-
-## Obtener la lista de procesos en Windows: `tasklist`
+### Obtener la lista de procesos en Windows: `tasklist`
 
 - Ayuda: `tasklist /?`
 - Todos los procesos: `tasklist`

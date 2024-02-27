@@ -90,7 +90,7 @@ NOTA: RECUERDA QUE AL COPIAR EL COMANDO AQUÍ DEBES USAR EL PID: 1234
 
 **ps 1234**
 
-4. Ahora que sabes el PID de la aplicación, ¿cómo harías para TERMINAR la aplicación desde consola, permitiendo que se cierre de forma ordenada? 
+4. Ahora que sabes el PID de la aplicación, ¿cómo harías para **TERMINAR la aplicación desde consola,** permitiendo que se cierre de forma ordenada? 
 
 **kill -TERM 1234**
 

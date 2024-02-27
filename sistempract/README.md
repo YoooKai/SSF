@@ -289,6 +289,44 @@ TEN EN CUENTA que en clase hemos visto que para lanzar comandos de forma que no 
 <img src="dem1.png">
 <img src="dem2.png">
 
+# Runlevels (Niveles de ejecución) en GNU/Linux
+
+Los runlevels indican el modo de operación del equipo, desde el apagado (nivel 0) hasta el reinicio (nivel 6). Cada runlevel configura la ejecución del sistema de manera específica, determinando qué unidades de disco se montarán, qué servicios se activarán, etc. Los runlevels estándar son:
+
+- **runlevel 0:** Apagado del equipo.
+- **runlevel 1:** Monousuario, solo root, sin red ni entorno gráfico (modo de emergencia).
+- **runlevel 2:** Multiusuario sin red ni entorno gráfico.
+- **runlevel 3:** Multiusuario con soporte de red, sin entorno gráfico.
+- **runlevel 4:** Reservado para propósitos especiales, similar al nivel 3.
+- **runlevel 5:** Multiusuario con soporte de red y entorno gráfico (modo normal).
+- **runlevel 6:** Reinicio del equipo.
+
+Solo los runlevels 0, 1 y 6 son estándar, mientras que los demás dependen de las distribuciones y sus sistemas init. En sistemas basados en systemd, el inicio y paro de servicios en cada runlevel se define en /etc/rcX.d, siendo X el runlevel, mediante enlaces a scripts en /etc/init.d, indicando S para iniciar y K para parar, seguidos de dos números que indican el orden.
+
+Ejemplo: `/etc/rc5.d/S01cron -> ../init.d/cron`  
+Indica que en el runlevel 5 se inicia el demonio cron con prioridad 1 (S01).
+
+Para cambiar de runlevel (NO recomendado), se puede usar el siguiente comando de systemd (reemplazar X con el nuevo runlevel: 0, 1, 2...6, o usar otros targets como `graphical.target` para el runlevel 5):
+
+```bash
+systemctl isolate runlevelX.target
+
+```
+## Comandos Principales WINDOWS
+
+| Descripción                                  | sc (cmd)    | Powershell      |
+| -------------------------------------------- | ----------- | --------------- |
+| Obtener información del servicio             | sc query    | Get-Service     |
+| Iniciar un servicio                          | sc start    | Start-Service   |
+| Detener un servicio                          | sc stop     | Stop-Service    |
+| Reiniciar un servicio                        |             | Restart-Service |
+| Pausar un servicio                           | sc pause    | Suspend-Service |
+| Reanudar un servicio pausado                 | sc continue | Resume-Service  |
+| Configurar un servicio                       | sc config   |                 |
+| Mostrar configuración de un servicio         | sc qc       |                 |
+| Indicar qué hacer si un servicio falla       | sc failure  |                 |
+| Mostrar qué se hace cuando un servicio falla | sc qfailure |                 |
+
 ## Linux
 
 Imagínate que trabajas en una empresa como administrador de sistemas informáticos. Ha venido un usuario diciéndote que tiene problemas con una aplicación, que le ocupa muchos recursos y que el equipo le va muy lento.

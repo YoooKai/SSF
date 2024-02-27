@@ -185,7 +185,7 @@ TEN EN CUENTA que en clase hemos visto que para lanzar comandos de forma que no 
 - `nohup` / `disown` (opciones: -h, -a, -r): Ejecuta procesos de manera que persistan incluso si se cierra la terminal.
 - `ulimit`: Establece límites para recursos del sistema.
 
-## Procesos en primer plano (foreground) y segundo plano (background):
+### Procesos en primer plano (foreground) y segundo plano (background):
 
 - `jobs` (opciones: -l, ...): Muestra trabajos en segundo plano.
 - `cmd &`: Ejecuta un comando en segundo plano.
@@ -193,7 +193,7 @@ TEN EN CUENTA que en clase hemos visto que para lanzar comandos de forma que no 
 - `fg`: Pone trabajos en primer plano.
 - `Ctrl+Z`: Detiene un trabajo y lo coloca en segundo plano.
 
-## Señales entre procesos
+### Señales entre procesos
 
 - Los procesos se comunican mediante señales.
 - Señales predefinidas y personalizadas.
@@ -208,14 +208,14 @@ TEN EN CUENTA que en clase hemos visto que para lanzar comandos de forma que no 
   - `SIGUSR2` (12): Señal definida por el usuario
 - Uso de `kill` para enviar señales, con opciones como `-l` para listar.
 
-## Ejecuciones en Primer Plano (foreground) y Segundo Plano (Background)
+### Ejecuciones en Primer Plano (foreground) y Segundo Plano (Background)
 
 - Ejecución en primer plano (foreground) bloquea la terminal.
 - Ejecución en segundo plano (background) permite seguir usando la terminal.
 - Se usa el símbolo `&` al final del comando para ejecutar en segundo plano.
 - Redirección de salida y errores para evitar interrupciones: `cmd > salida_cmd.txt 2> errores_cmd.txt &`
 
-## Prioridades de los procesos en GNU/Linux
+### Prioridades de los procesos en GNU/Linux
 
 - 140 niveles de prioridad (0 - 139).
 - Se dividen en:
@@ -223,7 +223,7 @@ TEN EN CUENTA que en clase hemos visto que para lanzar comandos de forma que no 
   - 100 - 139: Prioridad de usuario (mapeada a 0-39).
 - Comandos `nice` y `renice` para modificar la prioridad de los procesos.
 
-## Cómo ejecutar procesos aún si se cierra la shell o la terminal
+### Cómo ejecutar procesos aún si se cierra la shell o la terminal
 
 - Todos los procesos tienen un proceso padre.
 - `nohup` al lanzar el proceso o `disown` si ya se ejecutó para evitar cierre con la terminal.
@@ -245,7 +245,7 @@ TEN EN CUENTA que en clase hemos visto que para lanzar comandos de forma que no 
 - Por PID específico, e.g., 508: `tasklist /fi "PID eq 508"`
 - Varios filtros combinados: `tasklist /fi "PID gt 1000" /fi "STATUS eq RUNNING" /fi "MEMUSAGE lt 10240"`
 
-## Comando alternativo: `wmic`
+### Comando alternativo: `wmic`
 
 ### Ejemplos `wmic`
 
@@ -255,7 +255,7 @@ TEN EN CUENTA que en clase hemos visto que para lanzar comandos de forma que no 
 - Obtener PID de "svchost.exe": `wmic process where name="svchost.exe" get processid`
 - Lista de campos disponibles: `Caption`, `CommandLine`, ...
 
-## Finalizar procesos: `taskkill`
+### Finalizar procesos: `taskkill`
 
 - Ayuda: `taskkill /?`
 - Terminar por PID: `taskkill /fi "PID eq 1234"` o `taskkill /PID 1234`
@@ -263,7 +263,7 @@ TEN EN CUENTA que en clase hemos visto que para lanzar comandos de forma que no 
 - Terminar con procesos hijos: `taskkill /t /PID 1234`
 - Terminar por nombre: `taskkill /fi "IMAGENAME eq notepad.exe"` o `taskkill /IM notepad.exe`
 
-## Prioridades en Windows
+### Prioridades en Windows
 
 - Prioridades: idle, below normal, normal, above normal, high priority, realtime
 

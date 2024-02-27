@@ -107,7 +107,8 @@ Como vimos en clase, esto se debe a que la terminal está bloqueada por el prime
 7. Ahora que has liberado la terminal y puedes lanzar más comandos. Ejecuta un nuevo comando, por ejemplo el editor xed, pero ejecútalo de forma que NO bloquee la terminal, para que puedas seguir lanzando más comandos.
 TEN EN CUENTA que en clase hemos visto que para lanzar comandos de forma que no bloqueen la terminal es muy recomendable que estos comandos NO muestren la salida en pantalla, para que no interfieran.De este modo, en lugar de usar la pantalla, debemos guardar las salidas de estos comandos en ficheros. **Ejecuta xed de forma que no bloquee la terminal, que la salida normal se guarde en \~/xed.out y que se ignoren los errores. **
 
-**xed > xed.out 2> errores_cmd.txt &** NO está del todo Bien!
+**xed > ~/xed.out 2> ~/errores_cmd.txt &**
+
 
 8. Aunque la terminal no esté bloqueada, se están ejecutando varios comandos (los que has lanzado anteriormente). Muestra todos los comandos que se están ejecutando en esa terminal, indicando también su PID. 
 

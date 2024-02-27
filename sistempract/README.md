@@ -3,6 +3,10 @@
 
 # GESTIÓN DE SOFTWARE
 
+
+<img src="c1.jpg">
+<img src="c2.jpg">
+
 1. Estás trabajando en una empresa de desarrollo de software. 
 Tú utilizas tu editor de código favorito, pero en la empresa todos usan el editor de texto sublime. 
 Te han pedido que lo instales en tu equipo que tiene GNU/Linux con una distribución basada en Ubuntu.
@@ -65,6 +69,7 @@ El primer lugar donde deberías buscar este software tendría que ser:
 **sudo apt autoremove**
 
 <br>
+
 
 # PROCESOS
 

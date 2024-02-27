@@ -34,7 +34,7 @@ El primer lugar donde deberías buscar este software tendría que ser:
 
 5. Instala ahora el editor de texto sublime en tu equipo.
 
-**apt install sublime-text**
+**sudo apt install sublime-text**
 
 6. Ahora muestra un listado de todo el software que tienes instalado en el sistema. 
 

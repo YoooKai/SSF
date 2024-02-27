@@ -303,7 +303,7 @@ Mirando en algunas webs, este usuario ha aprendido cómo ver los procesos del si
 
 **sudo systemctl stop cups**
 
-3. Tras detener el servicio, pensabas que el usuario no iba a crear más incidencias, pero resulta que al poco tiempo vuelve porque su equipo tiene un "comportamiento" extraño y quiere que vuelvas a activar cups. Tú no crees que eso esté relacionado, pero para probar, decides volver a activarlo, ¿cómo lo harías? 
+3. Tras detener el servicio, pensabas que el usuario no iba a crear más incidencias, pero resulta que al poco tiempo vuelve porque su equipo tiene un "comportamiento" extraño y quiere que **vuelvas a activar cups.** Tú no crees que eso esté relacionado, pero para probar, decides volver a activarlo, ¿cómo lo harías? 
 
 **sudo systemctl start cups**
 
@@ -315,14 +315,15 @@ Mirando en algunas webs, este usuario ha aprendido cómo ver los procesos del si
 
 **/etc/cups**
 
-6. A pesar de haber cambiado la configuración, por alguna razón los nuevos valores parece que no están funcionando y sigue ejecutando la antigua configuración, ¿qué puede estar pasando?
-Las nuevas configuraciones sólo se cargan al reiniciar la máquina.
+6. A pesar de haber **cambiado la configuración,** por alguna razón los nuevos valores parece que no están funcionando y **sigue ejecutando la antigua configuración,** ¿qué puede estar pasando?
+   
+a. Las nuevas configuraciones sólo se cargan al reiniciar la máquina.
 
-a. Los servicios no permiten modificar la configuración, ya que esta la establece los desarrolladores y solo ellos pueden cambiarla.
+b. Los servicios no permiten modificar la configuración, ya que esta la establece los desarrolladores y solo ellos pueden cambiarla.
 
-b. La mayoría de servicios sólo cargan la configuración al iniciarse y no detectan cuándo la configuración ha cambiado, hay que forzarles a que la actualicen. **LA CORRECTA**
+ c. **La mayoría de servicios sólo cargan la configuración al iniciarse y no detectan cuándo la configuración ha cambiado, hay que forzarles a que la actualicen.** **LA CORRECTA**
 
-c. La forma de cambiar la configuración que he hecho no es correcta, la configuración debe cambiarse siempre por la interfaz gráfica del servicio.
+d. La forma de cambiar la configuración que he hecho no es correcta, la configuración debe cambiarse siempre por la interfaz gráfica del servicio.
 
 7. ¿Cómo harías para **asegurarte de que el servicio lee la nueva configuración y permanece en el estado activo/inactivo en el que estaba previamente, de forma que evite interrumpir el servicio si es posible**? 
 
@@ -344,23 +345,23 @@ c. La forma de cambiar la configuración que he hecho no es correcta, la configu
 El comando que muestra el estado tiene un error, es imposible que ese servicio esté activo.
 El usuario debe haberse equivocado y no ha reiniciado su máquina, porque una vez reiniciada no se puede activar el servicio.
 Cuando se cambió la configuración hubo algún error, por lo que se sigue usando la configuración antigua.
-Aunque el servicio no se haya cargado en el arranque, otro proceso o servicio puede haberlo iniciado.
+Aunque el servicio no se haya cargado en el arranque, **otro proceso o servicio puede haberlo iniciado.**
 
 Para evitar que esto suceda otra vez, indica el **comando que usarías para asegurar que el servicio NO pueda arrancarse de ninguna forma**. 
 
 **sudo systemctl mask cups**
 
-12. Comprueba ahora que cups NO puede iniciarse (utiliza el comando que sólo te muestra esta información, NO el estado completo del servicio). 
+12. Comprueba ahora que cups **NO puede iniciarse (utiliza el comando que sólo te muestra esta información,** NO el estado completo del servicio). 
 
 **systemctl is-enabled cups**
 
 13. Pues pasado un tiempo, cuando ya ni te acordabas de este usuario, resulta que vuelve a contactar contigo diciendo que al final ya sabía que era lo que estaba pasando, y muy contento te dice que él solo resolvió el problema y que la máquina le iba lenta casualmente cuando para distraerse intentaba abrir con el reproductor multimedia un fichero de 300GiB de música relajante de dominio público que alguien le había dado... (sin comentarios).
 
-Ahora que él solito ha descubierto el problema y su solución (no intentar abrir más ese archivo), quiere que dejes el servicio cups tal y como estaba al principio. Para ello, el primer paso es quitar el bloqueo para que el servicio pueda activarse. 
+Ahora que él solito ha descubierto el problema y su solución (no intentar abrir más ese archivo), quiere que **dejes el servicio cups tal y como estaba al principio.** Para ello, el primer paso es quitar el bloqueo para que el servicio pueda activarse. 
 
 **sudo systemctl unmask cups**
 
-14. Una vez eliminado el bloqueo, hay que configurar el servicio para que se inicie al arrancar el sistema y también activar el servicio ¿Cómo harías esto usando UN ÚNICO COMANDO? 
+14. Una vez eliminado el bloqueo, hay que **configurar el servicio para que se inicie al arrancar el sistema y también activar el servicio** ¿Cómo harías esto usando UN ÚNICO COMANDO? 
 
 **sudo systemctl enable cups --now**
 

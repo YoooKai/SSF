@@ -4,8 +4,8 @@
 # GESTIÓN DE SOFTWARE
 
 
-<img src="c1.jpg">
-<img src="c2.jpg">
+<img src="c1.png">
+<img src="c2.png">
 
 1. Estás trabajando en una empresa de desarrollo de software. 
 Tú utilizas tu editor de código favorito, pero en la empresa todos usan el editor de texto sublime. 

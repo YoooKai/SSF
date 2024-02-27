@@ -149,24 +149,141 @@ TEN EN CUENTA que en clase hemos visto que para lanzar comandos de forma que no 
 
 **tasklist /fi "MEMUSAGE gt 1024"**
 
-Lanza un bloc de notas (notepad.exe) con la prioridad más baja posible. 
+17. Lanza un bloc de notas (notepad.exe) con la prioridad más baja posible. 
 
 **start "" /low notepad.exe**
 
-Obtén el PID de la aplicación que lanzaste en el apartado anterior. 
+18. Obtén el PID de la aplicación que lanzaste en el apartado anterior. 
 
 **wmic process where name="notepad.exe" get processid**
 
-Vuelve a dejar al Bloc de Notas en su prioridad normal. 
+19. Vuelve a dejar al Bloc de Notas en su prioridad normal. 
 
 **wmic process where processid="1234" CALL setpriority "Normal"**
 
-Finaliza el Bloc de Notas de forma inmediata. 
+20. Finaliza el Bloc de Notas de forma inmediata. 
 
 **taskkill /F /PID 1234**
 
 
 <br>
+
+## Comandos de Procesos
+
+## Comandos para gestionar procesos
+
+- `ps` (opciones: aux, fea, -p, -o, ...): Muestra información sobre los procesos en ejecución.
+- `pstree`: Muestra la jerarquía de procesos en forma de árbol.
+- `pidof`: Muestra los PIDs de los procesos que coinciden con un programa.
+- `pgrep`: Muestra los PIDs de los procesos que coinciden con un patrón.
+- `top` / `htop` (`atop`, `btop`, ...): Muestra una lista dinámica de los procesos y sus estadísticas.
+- `uptime`: Muestra el tiempo que ha estado encendido el sistema y la carga promedio.
+- `kill` / `pkill` / `killall` / `xkill` (opciones: -l, -9, -15, ..., -INT, -KILL, -TERM, -STOP, -TSTP, -CONT, -USR1, -USR2, ...): Envía señales a procesos o usuarios.
+- `sleep`: Pausa la ejecución durante un intervalo de tiempo especificado.
+- `trap 'comandos' SIGNALs`: Captura señales y ejecuta comandos asociados.
+- `nice` / `renice`: Controla la prioridad de los procesos.
+- `nohup` / `disown` (opciones: -h, -a, -r): Ejecuta procesos de manera que persistan incluso si se cierra la terminal.
+- `ulimit`: Establece límites para recursos del sistema.
+
+## Procesos en primer plano (foreground) y segundo plano (background):
+
+- `jobs` (opciones: -l, ...): Muestra trabajos en segundo plano.
+- `cmd &`: Ejecuta un comando en segundo plano.
+- `bg`: Pone trabajos en segundo plano.
+- `fg`: Pone trabajos en primer plano.
+- `Ctrl+Z`: Detiene un trabajo y lo coloca en segundo plano.
+
+## Señales entre procesos
+
+- Los procesos se comunican mediante señales.
+- Señales predefinidas y personalizadas.
+- Algunas señales comunes:
+  - `SIGTERM` (15): Terminación
+  - `SIGINT` (2): Interrupción por teclado (Ctrl+C)
+  - `SIGKILL` (9): Matar el proceso
+  - `SIGSTOP` (17): Parar el proceso desde el teclado (Ctrl+Z)
+  - `SIGTSTP` (18): Parar el proceso
+  - `SIGCONT` (19): Continuar proceso parado
+  - `SIGUSR1` (10): Señal definida por el usuario
+  - `SIGUSR2` (12): Señal definida por el usuario
+- Uso de `kill` para enviar señales, con opciones como `-l` para listar.
+
+## Ejecuciones en Primer Plano (foreground) y Segundo Plano (Background)
+
+- Ejecución en primer plano (foreground) bloquea la terminal.
+- Ejecución en segundo plano (background) permite seguir usando la terminal.
+- Se usa el símbolo `&` al final del comando para ejecutar en segundo plano.
+- Redirección de salida y errores para evitar interrupciones: `cmd > salida_cmd.txt 2> errores_cmd.txt &`
+
+## Prioridades de los procesos en GNU/Linux
+
+- 140 niveles de prioridad (0 - 139).
+- Se dividen en:
+  - 0 - 99: Prioridad en tiempo real, reservada al sistema.
+  - 100 - 139: Prioridad de usuario (mapeada a 0-39).
+- Comandos `nice` y `renice` para modificar la prioridad de los procesos.
+
+## Cómo ejecutar procesos aún si se cierra la shell o la terminal
+
+- Todos los procesos tienen un proceso padre.
+- `nohup` al lanzar el proceso o `disown` si ya se ejecutó para evitar cierre con la terminal.
+
+# PROCESOS EN BATCH / WINDOWS 
+
+# Resumen de Procesos (y comandos) en MS Windows (cmd)
+
+## Obtener la lista de procesos en Windows: `tasklist`
+
+- Ayuda: `tasklist /?`
+- Todos los procesos: `tasklist`
+- Detalles de todos los procesos: `tasklist /v`
+- Filtrar por nombre, estado, PID, y más.
+
+### Ejemplos de Filtros
+
+- Nombre del ejecutable que empiece por "calc": `tasklist /fi "IMAGENAME eq calc*"`
+- Procesos en ejecución: `tasklist /fi "STATUS eq running"`
+- Procesos relacionados con "firefox": `tasklist /m /fi "IMAGENAME eq firefox.exe"`
+- Por PID específico, e.g., 508: `tasklist /fi "PID eq 508"`
+- Varios filtros combinados: `tasklist /fi "PID gt 1000" /fi "STATUS eq RUNNING" /fi "MEMUSAGE lt 10240"`
+
+## Comando alternativo: `wmic`
+
+### Ejemplos `wmic`
+
+- Información sobre el proceso con PID 1234: `wmic process where processid="1234"`
+- Nombre del ejecutable con PID 1234: `wmic process where processid="1234" get name`
+- Detalles del proceso con PID 1234: `wmic process where processid="1234" get name,description,status,parentprocessid,threadcount`
+- Obtener PID de "svchost.exe": `wmic process where name="svchost.exe" get processid`
+- Lista de campos disponibles: `Caption`, `CommandLine`, ...
+
+## Finalizar procesos: `taskkill`
+
+- Ayuda: `taskkill /?`
+- Terminar por PID: `taskkill /fi "PID eq 1234"` o `taskkill /PID 1234`
+- Forzar terminación por PID: `taskkill /f /PID 1234`
+- Terminar con procesos hijos: `taskkill /t /PID 1234`
+- Terminar por nombre: `taskkill /fi "IMAGENAME eq notepad.exe"` o `taskkill /IM notepad.exe`
+
+## Prioridades en Windows
+
+- Prioridades: idle, below normal, normal, above normal, high priority, realtime
+
+### Cambiar prioridad al ejecutar
+
+- Ejemplo para notepad: `start "" /AboveNormal notepad.exe`
+- Opciones: /low, /BelowNormal, /normal, /AboveNormal, /high, /RealTime
+
+### Cambiar prioridad en ejecución
+
+- Por PID, e.g., 1234: `wmic process where processid="1234" CALL setpriority "Above normal"`
+- Por nombre, e.g., notepad: `wmic process where name="notepad.exe" CALL setpriority "Normal"`
+
+### Obtener prioridad en ejecución
+
+- Por PID, e.g., 1234: `wmic process where processid="1234" get priority`
+- Por nombre, e.g., notepad: `wmic process where name="notepad.exe" get priority`
+
 
 
 # SERVICIOS

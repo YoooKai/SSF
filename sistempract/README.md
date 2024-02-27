@@ -105,20 +105,20 @@ Como vimos en clase, esto se debe a que la terminal está bloqueada por el prime
 **CTRL+Z ; bg**
 
 7. Ahora que has liberado la terminal y puedes lanzar más comandos. Ejecuta un nuevo comando, por ejemplo el editor xed, pero ejecútalo de forma que NO bloquee la terminal, para que puedas seguir lanzando más comandos.
-TEN EN CUENTA que en clase hemos visto que para lanzar comandos de forma que no bloqueen la terminal es muy recomendable que estos comandos NO muestren la salida en pantalla, para que no interfieran.De este modo, en lugar de usar la pantalla, debemos guardar las salidas de estos comandos en ficheros. **Ejecuta xed de forma que no bloquee la terminal, que la salida normal se guarde en \~/xed.out y que se ignoren los errores. **
+TEN EN CUENTA que en clase hemos visto que para lanzar comandos de forma que no bloqueen la terminal es muy recomendable que estos comandos NO muestren la salida en pantalla, para que no interfieran.De este modo, en lugar de usar la pantalla, debemos guardar las salidas de estos comandos en ficheros. **Ejecuta xed de forma que no bloquee la terminal, que la salida normal se guarde en \~/xed.out y que se ignoren los errores.**
 
 **xed > ~/xed.out 2> ~/errores_cmd.txt &**
 
 
-8. Aunque la terminal no esté bloqueada, se están ejecutando varios comandos (los que has lanzado anteriormente). Muestra todos los comandos que se están ejecutando en esa terminal, indicando también su PID. 
+8. Aunque la terminal no esté bloqueada, se están ejecutando varios comandos (los que has lanzado anteriormente). **Muestra todos los comandos que se están ejecutando en esa terminal, indicando también su PID.**
 
 **jobs -l**
 
-9. Imagínate que el primer comando que lanzaste (la aplicación de Dibujo u otra similar) necesitara que le introdujeras algún dato por teclado directamente al comando (no por la interfaz gráfica). Como el comando no está bloqueando la terminal, no puedes interaccionar por teclado con él. ¿Cómo harías para que el comando de la aplicación de dibujo volviera a bloquear la terminal y así puedas interaccionar? 
+9. Imagínate que el primer comando que lanzaste (la aplicación de Dibujo u otra similar) necesitara que le introdujeras algún dato por teclado directamente al comando (no por la interfaz gráfica). Como el comando no está bloqueando la terminal, no puedes interaccionar por teclado con él. ¿Cómo harías para que el **comando de la aplicación de dibujo volviera a bloquear la terminal y así puedas interaccionar**? 
 
 **fg 1234 / fg %1**
 
-10. Ahora que el comando de la aplicación Dibujo está bloqueando la terminal, imagínate que la aplicación se hubiera quedado "colgada" (no responde) y tú deseas cerrarla DESDE ESA MISMA TERMINAL. No puedes ejecutar ningún comando porque la terminal está bloqueada, pero hay una forma de cancelar (Interrumpir) el comando desde esa misma terminal, prueba a hacerlo e indica cómo lo has hecho. 
+10. Ahora que el comando de la aplicación Dibujo está bloqueando la terminal, imagínate que **la aplicación se hubiera quedado "colgada" (no responde) y tú deseas cerrarla DESDE ESA MISMA TERMINAL.** No puedes ejecutar ningún comando porque la terminal está bloqueada, pero hay una forma de cancelar **(Interrumpir) el comando** desde esa misma terminal, prueba a hacerlo e indica cómo lo has hecho. 
 
 **Ctrl+C**
 
@@ -127,19 +127,19 @@ TEN EN CUENTA que en clase hemos visto que para lanzar comandos de forma que no 
 **disown -h 1234**
 
 
-12. Abre una nueva terminal, vamos a ejecutar una aplicación que sabemos que suele solicitar muchos recursos y hacer que nuestro equipo vaya más lento, así que vamos a lanzarla con una prioridad un poco peor a la normal. Imaginemos que esta aplicación es xeyes, ejecútala de forma que su prioridad sea 5 puntos peor que la normal. 
+12. Abre una nueva terminal, vamos a ejecutar una aplicación que sabemos que suele solicitar muchos recursos y hacer que nuestro equipo vaya más lento, así que vamos a lanzarla con una prioridad un poco peor a la normal. Imaginemos que esta aplicación es xeyes, **ejecútala de forma que su prioridad sea 5 puntos peor que la normal.** 
 
-**nice -5 xeyes**
+**nice -n 5 xeyes**
 
-13. Aunque la aplicación que lanzaste en el apartado anterior fue enviada con menos prioridad, la máquina ha empezado a ir cada vez más lenta. Haz que esta aplicación que sigue en ejecución, empeore su prioridad en otros 5 puntos. 
+13. Aunque la aplicación que lanzaste en el apartado anterior fue enviada con menos prioridad, la máquina ha empezado a ir cada vez más lenta. Haz que esta aplicación que sigue en ejecución, **empeore su prioridad en otros 5 puntos.** 
 
 **renice -n 10 1234**
 
-14. Parece que el equipo ya va mejor, indica el comando que usarías para dejar la aplicación anterior con su prioridad inicial. 
+14. Parece que el equipo ya va mejor, indica el comando que usarías para **dejar la aplicación anterior con su prioridad inicial.** 
 
 **No se puede**
 
-15. Para finalizar, muestra la carga del sistema (utiliza cualquier de los comandos que hemos indicado en clase). 
+15. Para finalizar, muestra **la carga del sistema** (utiliza cualquier de los comandos que hemos indicado en clase). 
 
 **uptime**
 

@@ -6,7 +6,8 @@ Crear nuevo usuario
 
 ```bash
 sudo useradd nuevousuario
-esto crea un grupo llamado igual por defecto y un directorio /home/nuevousuario 
+
+# esto crea un grupo llamado igual por defecto y un directorio /home/nuevousuario 
 ```
 
 Añadir a un grupo

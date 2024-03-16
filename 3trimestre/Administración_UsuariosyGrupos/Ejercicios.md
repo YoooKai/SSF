@@ -1,10 +1,11 @@
-ADMINISTRACIÓN DE USUARIOS Y GRUPOS
+# ADMINISTRACIÓN DE USUARIOS Y GRUPOS
 
-GNU/Linux 
+## GNU/Linux 
 Resuelve los siguientes apartados en la máquina virtual de GNU/Linux. Cuando se pregunte por qué comando se utilizaría, debes indicar el comando completo, con las opciones y parámetros necesarios para que funcione:
 
 1- Muestra todos los usuarios de tu máquina virtual. ¿Dónde está esa información? ¿Qué datos guarda el sistema sobre sus usuarios y cómo se organizan?
 Para mostrar todos los usuarios de la máquina ejecuto el comando:
+
 cat /etc/passwd
 En este archivo se encuentra toda la información de los usuarios.  Cada línea es un usuario, y en esta línea se encuentra la siguiente información:
 Cuenta (nombre de usuario) : Contraseña : UID (ID de usuario) : GID (ID de grupo) : GECOS (campo opcional con propósitos informativos) : Directorio (directorio principal o home del usuario) : shell (ruta al shell predeterminado, campo opcional)

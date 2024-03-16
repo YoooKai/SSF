@@ -14,10 +14,11 @@ Añadir a un grupo
 ```bash
 useradd nuevousuario -g grupoprincipal
 
--el grupo debe existir
--g se usa para añadir al grupo principal
--G agregar a grupo secundario(tantos como quiera)
+# el grupo debe existir
+# -g se usa para añadir al grupo principal
+# -G agregar a grupo secundario(tantos como quiera)
 
+#Ejemplo:
 useradd nuevousuario -g grupoprincipal -G gruposecundario1,gruposecundario2
 ```
 

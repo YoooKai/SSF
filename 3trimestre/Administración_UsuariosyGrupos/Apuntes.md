@@ -304,7 +304,10 @@ net user prb2 /times: Permite modificar el horario de inicio de sesión del usua
 net accounts: Muestra información global de la configuración de cuentas del sistema, incluyendo la longitud mínima de la contraseña, la duración de la contraseña y otras políticas de seguridad.
 
 Configuración de la contraseña:
-net accounts /minpwlen:12 /minpwage:7 /maxpwage:30 /uniquepw:3: Establece las siguientes políticas de contraseña:
+
+net accounts /minpwlen:12 /minpwage:7 /maxpwage:30 /uniquepw:3: 
+
+Establece las siguientes políticas de contraseña:
 
 - Longitud mínima de la contraseña: 12 caracteres.
 - Edad mínima de la contraseña: 7 días.

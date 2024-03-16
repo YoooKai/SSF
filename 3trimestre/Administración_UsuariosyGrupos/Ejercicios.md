@@ -145,3 +145,120 @@ sudo userdel -rf test01
 sudo pkill -u test01 -9
 
 
+
+# windows
+¿Por qué MS Windows distingue entre usuarios/grupos locales y globales?
+
+Windows distingue entre usuarios y grupos locales, que están limitados a un sistema específico, y usuarios y grupos globales, que pueden ser utilizados en una red de múltiples sistemas. Esto permite una gestión de acceso más granular y eficiente en entornos de red.
+
+Muestra todos los usuarios locales de tu máquina virtual. ¿Cuál es la función de cada usuario?
+Para ver los usuarios locales se usa:
+net user
+Está Administrador, kai, Utility, Invitado, .y cada usuario puede tener diferentes funciones dependiendo de cómo se configuren los permisos y las políticas de seguridad en el sistema.
+
+Muestra información detallada del usuario que estás usando ahora mismo. ¿Qué significa cada línea? ¿A qué grupos perteneces?
+net user kai97
+
+Muestra información sobre el usuario, como el país, nombre completo.. en caso de que el usuario lo haya rellenado. También informa sobre la contraseña y los cambios, el directorio principal, la última sesión, de qué grupos forma parte etc.
+Muestra todos los grupos locales de tu máquina virtual. ¿Qué función tiene cada grupo (busca unos cuantos)?
+Los grupos en los que está mi usuario son Administradores y Usuarios.
+El grupo Administradores  tiene privilegios de administración completos en el sistema, mientras que el de Usuarios tiene derechos y permisos básicos en el sistema. Por lo que mi usuario podrá realizar todas las tareas de administración y también tendrá acceso a las funciones estándar del sistema asignadas al grupo "Usuarios".
+
+Muestra información detallada del grupo "Usuarios". ¿Quién pertenece a este grupo? Repite la operación para el grupo de "Administradores".
+Se puede acceder a la información de estos grupos con:
+net localgroup Usuarios
+net localgroup Administradores
+
+En el primero tiene el comentario: “Los usuarios no pueden hacer cambios accidentales o intencionados en el sistema y pueden ejecutar la mayoría de aplicaciones.” Pertenecen:
+“kai97
+NT AUTHORITY\INTERACTIVE
+NT AUTHORITY\Usuarios autentificados”
+
+En cuatro al de administradores, tiene como comentario “Los administradores tienen acceso completo y sin restricciones al equipo o dominio”
+Y pertenecen:
+Administrador
+kai97
+
+
+Crea un usuario test01 SIN indicar contraseña.
+net user test01 /add /passwordreq:no
+
+Crea un usuario test02 indicando la contraseña en el propio comando
+net user test02 contraseña /add.
+
+Crea un usuario test03 y solicita que se indique la contraseña por teclado, sin mostrarla
+net user test03 * /add. 
+Esto solicitará la contraseña sin mostrarla mientras se escribe.
+
+Prueba a abrir sesión con los usuarios creados. ¿Puedes acceder con todos? Si no puedes acceder con alguno(s), indica cuál es el problema y soluciónalo.
+¿A qué grupo(s) local(es) pertenecen los usuarios creados?
+net user nombreusuario
+
+Crea un grupo local llamado Informática. Añade los tres usuarios anteriores a ese grupo y muestra la lista de usuarios del grupo para ver que así es.
+
+net localgroup Informática /add
+net localgroup Informática test01 /add
+net localgroup Informática test02 /add
+net localgroup Informática test03 /add
+
+Para verificar que los usuarios se han agregado correctamente al grupo "Informática":
+
+net localgroup Informática
+
+Haz que test03 sea administrador.
+net localgroup Administradores test03 /add
+
+
+Haz que la cuenta de test01 caduque al final de 2023 y que tenga que cambiar la contraseña la próxima vez que inicie sesión.
+
+net user test01 /expires:12/31/2023
+net user test01 /logonpasswordchg:yes
+
+
+Desactiva al usuario test02.
+net user test02 /active:no
+
+
+Haz que el usuario test03 NO pueda cambiar su contraseña, y que esta NO sea obligatoria.
+
+net user test03 /passwordchg:no
+
+
+Prueba a iniciar de nuevo sesión con cada usuario... ¿qué sucede?
+Con "test01", se pide que cambie la contraseña al iniciar sesión debido a la configuración de cambio de contraseña obligatorio.
+Con "test02", la cuenta está desactivada y no se podrá iniciar sesión.
+Con "test03", se puede iniciar sesión normalmente, pero no podrá cambiar la contraseña.
+
+Indica el nombre completo del usuario test01 (invéntate uno) y añade comentarios a su cuenta.
+
+net user test01 /fullname:"Kai Rodríguez" /comment:"Usuario de prueba para fines de desarrollo."
+
+
+Elimina al usuario test03 del grupo local de "Informática".
+
+net localgroup Informática test03 /del
+
+
+Muestra la configuración global de las cuentas (longitud mínima de las contraseñas, duración, bloqueos, etc.).
+
+Se muestra  la configuración global de las cuentas utilizando el comando:
+net accounts
+
+Modifica la configuración global para que todas las contraseñas tengan uan longitud mínima de 6 caracteres, se tengan que cambiar cada mes y no se puedan usar las últimas 3 contraseñas). 
+
+net accounts /minpwlen:6 /maxpwage:30 /uniquepw:3
+
+
+Elimina el grupo local de "Informática". Muestra todos los grupos locales para asegurate de que está eliminado.
+
+	net localgroup Informática /delete
+
+	Para asegurarse:
+net localgroup
+	
+Elimina todos los usuarios creados en estos ejercicios. Muestra todos los usuarios locales para asegurarte de que han sido eliminados.
+Para eliminar todos los usuarios creados se usa el comando:
+ net user nombre_de_usuario /delete. 
+
+Luego, se verifica que los usuarios hayan sido eliminados mostrando todos los usuarios locales con el comando:
+net user

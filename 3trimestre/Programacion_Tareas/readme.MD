@@ -192,3 +192,40 @@ Simular el comportamiento de top ejecutando el comando ps cada segundo y mostran
    - Se pueden definir configuraciones, alias de comandos, variables globales, etc.
    - Se debe tener cuidado al editar estos archivos, ya que afectan al funcionamiento del sistema.
 
+# Windows/Batch
+
+Hay varias opciones.
+
+- Utilizando la Consola CMD:
+
+    - Podemos emplear el comando **schtasks**, que permite indicar tareas programadas por tiempo (puntuales y repetitivas), por eventos, entre otras opciones.
+
+```batch
+schtasks /create /sc once /st 20:38 /tn tarea1  /tr c:\Windows\System32\calc.exe
+```
+Donde:
+    - **/create**: crear la tarea
+    - **/sc once**: tarea puntual. Con /sc podemos indicar la periodicidad, puede ser puntual (**once**), diaria (**daily**), semanal (**weekly**), mensual (**monthly**), al inicio (**onstart**), cuando cualquier usuario abre sesión (**onlogon**), cuando el sistema tiene baja carga (**onidle**), etc.
+    - **/st** 20:30: hora de inicio
+    - **/tn** tarea1: nombre de la tarea
+    - **/tr** c:\Windows\System32\calc.exe: aplicación a ejecutar
+
+- Nota, si tenemos dudas de la ruta donde se encuentra alguna aplicación, podemos usar el comando where. Por ejemplo, where calc.exe --> c:\Windows\System32\calc.exe
+
+- Utilizando PowerShell:
+
+    - PowerShell ofrece una familia de cmdlets relacionados con las tareas programadas: New-ScheduledTask, Get-ScheduledTask, etc.
+
+### Tabla
+| Tipo                                      | GNU/Linux                             | MS Windows (cmd)                 |
+|-------------------------------------------|---------------------------------------|----------------------------------|
+| Por tiempo (tareas puntuales)             | `at (-c, atq, atrm)`                  | `schtasks /sc ONCE`              |
+| Por tiempo (tareas repetitivas)           | `crontab (-l, -e)`                    | `schtasks /sc HOURLY, DAILY, MONTHLY, etc.` |
+| Por evento (baja carga)                   | `batch`                               | `schtasks /sc ONIDLE`            |
+| Por evento (arranque)                     | `crontab @reboot`                     | `schtasks /sc ONSTART`           |
+| Por evento (logon, cualquier usuario)     | `/etc/profile.d/`                     | `schtasks /sc ONLOGON`           |
+|                                           |                                       | `shell:common startup`           |
+| Por evento (login, usuario concreto)      | `$HOME/.profile`                      | `shell:startup`                  |
+|                                           | `$HOME/.bashrc`                       |                                  |
+| Por evento (cambio en directorios, ficheros, ...) | `incron`                         |                                  |
+| Por evento (otros eventos)                | Programación propia                   | `schtasks /sc ONEVENT`           |

@@ -35,24 +35,26 @@ Especificar nombre de usuario
 useradd -c "Julia Schneider" julia
 ```
 
-# Contraseñas
+### Contraseñas
 
 Tras crear usuario, se debe asignar contraseña.
 
 ```bash
 sudo passwd julia
 
-pasa asignar una contraseña al usuario julia
+# pasa asignar una contraseña al usuario julia
 ```
 
 ```bash
-**bloquear o desbloquear** contraseña (poder o no cambiarla)
--l , --lock, desbloquearla, -u , --unlock
+# bloquear o desbloquear contraseña (poder o no cambiarla)
+-l , --lock
+-u , --unlock
 
-**establecer máximo de contraseña (hasta que expire)**
+# establecer máximo de contraseña (hasta que expire)
 --maximum=DÍAS
 passwd --maximum=90 julia
-(así el usuario julia tendrá una contraseña que expire en 90 días)
+
+# así el usuario julia tendrá una contraseña que expire en 90 días
 ```
 
 ## otras operaciones
@@ -69,7 +71,7 @@ cambiar el directorio de un usuario
 
 ```markdown
 usermod -d /nuevo/directorio -m nombreususario
-(-m es de move, -d de directorio)
+# -m es de move, -d de directorio
 ```
 
 agregar usuarios a grupos secundarios
@@ -101,13 +103,13 @@ BORRAR CUENTA (debes ser root)
 ```markdown
 sudo userdel nombreusuario
 
---no borra los archivos
+# no borra los archivos
 ```
 
 borrar cuenta y forzar borrar su directorio y archivos
 
 ```markdown
--forza a borrar direct y cuenta
+
 sudo userdel -rf nombreusuario
 ```
 
@@ -122,7 +124,8 @@ groups nombreusuario
 cambia número de días en los que se tiene que cambiar la contraseña
 
 ```markdown
---muestra info respecto a contraseña de usuario
+# muestra info respecto a contraseña de usuario
+
 chage --list nombredeusuario
 
 ```
@@ -266,26 +269,26 @@ contraseña grupo: /etc/gshadow
 
 `
 
-net user: Muestra la lista de usuarios en el sistema.
+**net user:** Muestra la lista de usuarios en el sistema.
 
-net user ssf: Muestra información detallada del usuario "ssf", incluyendo su nombre completo, si tiene una contraseña asignada, y su configuración de cuenta.
+**net user ssf:** Muestra información detallada del usuario "ssf", incluyendo su nombre completo, si tiene una contraseña asignada, y su configuración de cuenta.
 
-net user prb1 /add: Agrega un nuevo usuario llamado "prb1" al sistema. Por defecto, este usuario tendrá una configuración mínima.
+**net user prb1 /add:** Agrega un nuevo usuario llamado "prb1" al sistema. Por defecto, este usuario tendrá una configuración mínima.
 
-net localgroup: Permite visualizar los grupos locales disponibles en el sistema.
+**net localgroup:** Permite visualizar los grupos locales disponibles en el sistema.
 
 Crear grupo:
-net localgroup Impresora /add: Crea un nuevo grupo local llamado "Impresora".
+**net localgroup Impresora /add:** Crea un nuevo grupo local llamado "Impresora".
 
 Añadir a un grupo:
-net localgroup Impresora /add prb1: Agrega al usuario "prb1" al grupo "Impresora".
+**net localgroup Impresora /add prb1:** Agrega al usuario "prb1" al grupo "Impresora".
 
 Borrar de un grupo:
-net localgroup Impresora /del prb1: Elimina al usuario "prb1" del grupo "Impresora".
+**net localgroup Impresora /del prb1:** Elimina al usuario "prb1" del grupo "Impresora".
 
-net user prb2 */add: Crea un nuevo usuario llamado "prb2" y solicita una contraseña al momento de crearlo.
+**net user prb2 */add:** Crea un nuevo usuario llamado "prb2" y solicita una contraseña al momento de crearlo.
 
-net user prb2 */add /active:no /expires:10/10/2024 /times:L-V,14:00-21:00 /fullname:"Jesusito" /passwordreq:yes:
+**net user prb2 */add /active:no /expires:10/10/2024 /times:L-V,14:00-21:00 /fullname:"Jesusito" /passwordreq:yes:**
 
 - Crea un nuevo usuario llamado "prb2".
 - Desactiva la cuenta hasta que se active manualmente.
@@ -294,18 +297,18 @@ net user prb2 */add /active:no /expires:10/10/2024 /times:L-V,14:00-21:00 /fulln
 - Establece el nombre completo del usuario como "Jesusito".
 - Requiere que se establezca una contraseña para el usuario.
 
-Añadir a administrador (y quitar de usuarios):
+**Añadir a administrador (y quitar de usuarios):**
 net localgroup Administradores /add prb2: Agrega al usuario "prb2" al grupo de administradores y lo elimina del grupo de usuarios estándar.
 
-Activar cuenta:
+**Activar cuenta:**
 net user prb2 /active:yes: Activa la cuenta del usuario "prb2".
 
-Cambiar las horas de inicio de sesión:
+**Cambiar las horas de inicio de sesión:**
 net user prb2 /times: Permite modificar el horario de inicio de sesión del usuario "prb2".
 
-net accounts: Muestra información global de la configuración de cuentas del sistema, incluyendo la longitud mínima de la contraseña, la duración de la contraseña y otras políticas de seguridad.
+**net accounts:** Muestra información global de la configuración de cuentas del sistema, incluyendo la longitud mínima de la contraseña, la duración de la contraseña y otras políticas de seguridad.
 
-Configuración de la contraseña:
+**Configuración de la contraseña:**
 
 net accounts /minpwlen:12 /minpwage:7 /maxpwage:30 /uniquepw:3: 
 

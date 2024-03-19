@@ -45,6 +45,9 @@ chmod +x ~/miscript.sh
 ```
 6. Ejecutar el script "~/miscript.sh" en 12 horas a partir de ahora.
 ```bash
+at now + 12 hours -f ~/miscript.sh >> ~/backup.txt 2>> ~/backup.err
+#o
+at next monday 2:00 <<< "uptime > ~/cargaNextMonday 2> carga.err"
 echo "~/miscript.sh" | at now + 12 hours
 
 ```

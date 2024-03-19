@@ -3,11 +3,11 @@
 ## GNU/Linux 
 Resuelve los siguientes apartados en la máquina virtual de GNU/Linux. Cuando se pregunte por qué comando se utilizaría, debes indicar el comando completo, con las opciones y parámetros necesarios para que funcione:
 
-**1- Muestra todos los usuarios de tu máquina virtual. ¿Dónde está esa información? ¿Qué datos guarda el sistema sobre sus usuarios y cómo se organizan?
-Para mostrar todos los usuarios de la máquina ejecuto el comando:**
+**1- Muestra todos los usuarios de tu máquina virtual.** ¿Dónde está esa información? ¿Qué datos guarda el sistema sobre sus usuarios y cómo se organizan?
+Para mostrar todos los usuarios de la máquina ejecuto el comando:
 
 <ins>cat /etc/passwd</ins>
-
+<ins>tail /etc/passwd</ins>
 En este archivo se encuentra toda la información de los usuarios.  Cada línea es un usuario, y en esta línea se encuentra la siguiente información:
 Cuenta (nombre de usuario) : Contraseña : UID (ID de usuario) : GID (ID de grupo) : GECOS (campo opcional con propósitos informativos) : Directorio (directorio principal o home del usuario) : shell (ruta al shell predeterminado, campo opcional)
 
@@ -27,7 +27,8 @@ Sí, generalmente los usuarios con UID < 1000 son usuarios del sistema, mientras
 La información de los grupos se encuentra en el archivo /etc/group. Cada línea en este archivo representa a un grupo y contiene información como el nombre del grupo, GID y los usuarios que pertenecen a ese grupo.
 
 Se puede ver los grupos que hay con:
-cat etc/group
+
+<ins>cat etc/group</ins>
 
 **5. ¿Por qué hay tantos grupos? Intenta buscar información sobre qué funciones tienen los diferentes grupos de tu sistema, en los apuntes hay un enlace con algo de información.**
 
@@ -49,8 +50,9 @@ shadow: Permite la lectura de /etc/shadow. Utilizado por algunos programas que n
 
 **6. ¿Cómo comprobarías si un usuario existe ya en el sistema? ¿Y un grupo?**
 
-para un usuario: id nombreusuario
-para un grupo: getent group nombregrupo
+para un usuario: <ins>id nombreusuario</ins>
+
+para un grupo: <ins>getent group nombregrupo</ins>
 
 **7. Crea el usuario "test01" de forma que su home sea /home/test01 (se deben copiar la configuración básica de /etc/skel) y su shell sea /bin/bash.**
 
@@ -59,29 +61,36 @@ sudo useradd -d /home/test01 -k /etc/skel/ -m -s /bin/bash test01
 **8. Intenta abrir una sesión como "test01" una vez creado ¿puedes acceder? ¿Por qué? ¿Cómo lo arreglarías?**
 
 No se puede porque no se le ha asignado una contraseña. Para ello se usa el comando:
-sudo passwd test01
+
+<ins>sudo passwd test01</ins>
 
 
 
 **9. El usuario "test01", ¿qué grupo principal tiene? Cámbialo para que sea su grupo principal sea "tests".
 Su grupo principal tiene el mismo nombre que el del usuario, ya que se crea automáticamente así. Se puede comprobar con id test01. Para cambiarlo:**
 
-sudo usermod -g tests test01
+<ins>sudo usermod -g tests test01</ins>
 
 
 **10. Borra el grupo principal antiguo de test01, ¿puedes eliminarlo? ¿Por qué?**
-sudo groupdel test01
+
+<ins>sudo groupdel test01</ins>
+
 Sí se puede, porque se permite eliminar si el grupo no está siendo utilizado por ningún usuario como grupo principal o secundario. 
 
 **11. Borra el grupo "tests", ¿puedes eliminarlo? ¿Por qué?**
+
 No, porque test01 está usando ese grupo.
 
 **12. Asigna algunos grupos secundarios a "test01". Indica para qué sirve cada uno de los grupos creados.**
 
 Para agregar a grupos secundarios se usa el comando usermod:
-sudo usermod -G grupo1,grupo2 test01
+
+<ins>sudo usermod -G grupo1,grupo2 test01</ins>
+
 Estos grupos son creados con:
-sudo groupadd group1
+
+<ins>sudo groupadd group1</ins>
 
 En caso de querer añadir a alguno existente, se puede por ejemplo colocar en el grupo de video, disk o audio, que permite acceso a los dispositivos con estos nombres.
 Otros:
@@ -89,13 +98,14 @@ https://blog.desdelinux.net/significado-de-los-grupos-y-usuarios-en-debian-gnuli
 
 **13. Asigna algunos grupos más secundarios a "test01", SIN borrar los que ya tenía**
 
-sudo usermod -aG nuevogrupo1 test01
+<ins>sudo usermod -aG nuevogrupo1 test01</ins>
+
 Se usa la -a para no eliminar los que ya tenía.
 
 
 **14. Elimina algunos grupos secundarios del usuario test01**
 
-sudo gpasswd -d test01 grupoaeliminar
+<ins>sudo gpasswd -d test01 grupoaeliminar</ins>
 
 
 **15. Bloquea al usuario test01. Luego intenta abrir una sesión... ¿puedes? ¿Por qué?**

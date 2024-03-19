@@ -18,7 +18,7 @@ echo "uptime > ~/cargaNextMonday.txt 2> ~/carga.err" | at next monday 2:00
 crontab -e
 
 # añadir línea
-  0   2  * * 1  uptime >> ~/cargaAllMondays.txt 2>&1
+  0   2  * * 1  uptime >> ~/cargaAllMondays.txt 2>> ~/carga.err
 # min h dm m ds 
 ```
 
@@ -65,6 +65,8 @@ crontab -e
 8. Ejecutar el script "~/miscript.sh" justo en una semana a partir de ahora.
 
 ```bash
+at now + 1 week -f ~/miscript.sh >> ~/backup.txt 2>> ~/bakcup.err
+
 echo "~/miscript.sh" | at now + 1 week
 
 ```

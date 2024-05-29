@@ -20,6 +20,8 @@ En los procesos de comunicación, existen diversos procedimientos y normas que e
 
 - Control de errores: Si hay o no control de errores y cómo se lleva a cabo.
 
+(Yo me lo aprendí formando una frase con Feos Elefantes Rojos Toman Siestas Para Alimentarse, pues la inicial de cada pertenece a una capa, en orden, y así me acuerdo de esta vaina.)
+
 ## Protocolos y estándares
 
 - Protocolos de comunicaciones: Conjunto de normas y procedimientos que los diseñadores de una red establecen para que los distintos componentes de la red los utilicen.

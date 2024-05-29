@@ -307,7 +307,7 @@ Analogía: La gestión del transporte, asegurándose de que el paquete llegue in
 
 Función: División de datos en segmentos, control de flujo y corrección de errores de extremo a extremo.
 
- ###Capa de Sesión:
+ ### Capa de Sesión:
 
 PDU: Datos de sesión
 

@@ -46,6 +46,8 @@ Dependiendo del apantallamiento, existen varios tipos de cables de par trenzado:
 1. **UTP (Unshielded Twisted Pair)**: No apantallados, son los más simples y sensibles a interferencias. 
 2. **STP (Shielded Twisted Pair)**: Apantallados individualmente, con alta inmunidad al ruido pero muy rígidos.
 3. **FTP (Foiled Twisted Pair)**: Con una malla conductora global trenzada, ofrecen una protección intermedia.
+   
+<img src="https://www.tdtprofesional.com/blog/wp-content/uploads/cables.jpg" width="400px">
 
 ### Categorías de Cables
 Los cables de par trenzado se clasifican en varias categorías según el número de pares, vueltas por metro y materiales utilizados:

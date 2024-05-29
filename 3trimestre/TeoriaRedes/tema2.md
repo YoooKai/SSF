@@ -53,9 +53,10 @@ Tipos de estándares:
 
 - Intento de unificar esfuerzos y conocimientos, aunque resultó complejo y difícil de implementar.
 - Permite describir y comprender la base conceptual de otras arquitecturas de red.
-Modelo TCP/IP
 
-## Más sencillo y práctico, ganó popularidad.
+## Modelo TCP/IP
+
+- Más sencillo y práctico, ganó popularidad.
 - Evolucionó de ARPANET en los 70s, convirtiéndose en el estándar de facto.
 
 # La pila de protocolos OSI

@@ -330,3 +330,50 @@ PDU: Mensajes
 Analogía: El contenido real del paquete, como el regalo y la tarjeta con el mensaje.
 
 Función: Interfaz directa con el usuario final y proporciona servicios como el correo electrónico y la transferencia de archivos.
+
+
+--
+
+### Sistema TCP/IP
+
+El sistema TCP/IP es válido tanto para redes medianas como grandes, destacándose por su fiabilidad y facilidad para el enrutamiento de paquetes. Recibe su nombre de dos de sus principales protocolos: TCP (Transport Control Protocol) en la capa de transporte e IP (Internet Protocol) en la capa de red.
+
+### Capa de Acceso a la Red
+
+Esta capa proporciona la transmisión de datos independientemente de la red que esté configurada. Sus principales funciones son:
+
+- **Conversión de la señal analógica/digital:** Transforma la señal analógica continua en una señal digital compuesta únicamente por unos y ceros.
+- **Sincronización a nivel del enlace de datos:** Evita que equipos más rápidos colapsen a los equipos más lentos, utilizando técnicas como caracteres de inicio y fin de trama o identificadores de tamaño de trama.
+
+### Capa de Internet
+
+Encargada de transmitir datagramas utilizando direcciones IP para el direccionamiento. Sus funciones principales incluyen:
+
+- **Control de mensajería:** Utiliza el protocolo ICMP (Internet Control Message Protocol) para enviar mensajes de error y comprobar la conectividad entre dispositivos.
+- **Definición de la dirección física a partir de la dirección lógica:** Emplea el protocolo ARP (Address Resolution Protocol) para obtener la dirección MAC de los equipos a partir de su dirección IP.
+- **Fragmentación y ensamblaje de datagramas:** Divide los datos de la capa de transporte en datagramas más pequeños y los ensambla en el equipo de destino.
+
+### Capa de Transporte
+
+Responsable de garantizar una transmisión fiable entre las aplicaciones que quieren comunicarse. Sus funciones principales son:
+
+- **División en segmentos:** Divide los datos de la capa de aplicación en segmentos manejables.
+- **Gestión de puertos:** Introduce el concepto de puertos para que múltiples aplicaciones puedan comunicarse simultáneamente sin interferir entre sí.
+- **Servicio extremo a extremo:** Permite que los nodos de la red envíen y reciban paquetes directamente sin requerir elementos intermedios de red.
+
+### Capa de Aplicación
+
+Contiene las aplicaciones de red que utilizan los servicios ofrecidos por las capas inferiores del modelo para comunicarse. Algunos de los protocolos de esta capa son:
+
+- Telnet: Permite la conexión remota a otro terminal.
+- NFS (Network File System): Facilita el compartir ficheros en red, especialmente en sistemas Unix y Linux.
+- FTP (File Transfer Protocol): Permite la transferencia de ficheros entre ordenadores conectados a Internet.
+- HTTP (HyperText Transfer Protocol): Permite la transferencia de texto con hipervínculos e imágenes, base de las páginas web actuales.
+- SMTP (Simple Mail Transfer Protocol): Utilizado para el intercambio de mensajes de correo electrónico.
+- SSH (Secure Shell): Proporciona una transferencia de datos encriptada para asegurar la comunicación.
+- POP (Post Office Protocol): Se utiliza para obtener mensajes de correo electrónico almacenados en un servidor remoto, descargando el contenido al cliente.
+
+---
+
+**Analogía:**
+Imagina que el sistema TCP/IP es como una autopista bien organizada y eficiente para el transporte de información. La capa de acceso a la red sería como los vehículos que entran y salen de la autopista, la capa de internet sería como las señales de tráfico que guían el flujo de vehículos, la capa de transporte sería como las carreteras que conectan diferentes ciudades y la capa de aplicación sería como los destinos a los que llegan los vehículos, como las oficinas o los hogares.

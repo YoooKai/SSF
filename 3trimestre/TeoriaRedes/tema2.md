@@ -20,7 +20,7 @@ En los procesos de comunicación, existen diversos procedimientos y normas que e
 
 - Control de errores: Si hay o no control de errores y cómo se lleva a cabo.
 
-(Yo me lo aprendí formando una frase con Feos Elefantes Rojos Toman Siestas Para Alimentarse, pues la inicial de cada pertenece a una capa, en orden, y así me acuerdo de esta vaina.)
+
 
 ## Protocolos y estándares
 
@@ -76,7 +76,8 @@ Dividida en siete capas (desde la más física hacia la más cercana al usuario)
 
 - Capa de presentación: Representación de datos para su transmisión.-
 - Capa de aplicación: Interactúa con el usuario final, proporcionando servicios de red.
-
+- 
+(Yo me lo aprendí formando una frase con Feos Elefantes Rojos Toman Siestas Para Alimentarse, pues la inicial de cada pertenece a una capa, en orden, y así me acuerdo de esta vaina.)
 
 # Comunicación entre dos máquinas
 

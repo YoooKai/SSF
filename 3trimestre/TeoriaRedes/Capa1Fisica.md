@@ -96,8 +96,8 @@ Utiliza ondas de luz para transmitir información. Consta de tres componentes:
 - **Fuente de luz**: Indica un bit 1 con un pulso de luz.
 - **Medio de transmisión**: Fibra de vidrio ultradelgada.
 - **Detector**: Genera un impulso eléctrico al recibir luz.
-- 
-<img src="https://www.thefoa.org/ESP/Fibra_optica.fld/image003.png">
+  
+<img src="https://www.thefoa.org/ESP/Fibra_optica.fld/image003.png" width="350px">
 
 ### Tipos
 - **Monomodo**: Fibra delgada, luz en línea recta, núcleo de 10 μm.

@@ -84,7 +84,8 @@ Dividida en siete capas (desde la más física hacia la más cercana al usuario)
 En el modelo OSI, la información viaja desde la capa de aplicación de la máquina emisora hasta la capa de aplicación de la máquina receptora, pasando por todas las capas en cada máquina. Las capas homólogas establecen enlaces virtuales, y solo en la capa física se establecen enlaces físicos. La información de cada capa se añade a los datos mediante cabeceras y colas, un proceso llamado encapsulación.
 
 # Capa Física del Modelo OSI
-<img src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema03-027.png">
+<img src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema03-027.png" width="300px">
+
 ### Especificaciones de los medios de transmisión
 
 - Descripción: Define cómo deben ser los medios físicos que se utilizan para transmitir datos, como cables de cobre, fibra óptica o el aire para las transmisiones inalámbricas.

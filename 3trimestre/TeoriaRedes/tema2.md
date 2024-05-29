@@ -271,3 +271,42 @@ La encapsulación de los datos es un proceso fundamental en el modelo OSI que im
   
 - **Desencapsulación**:
   - Es el proceso contrario a la encapsulación, realizado por el ordenador de destino para obtener los datos originales y presentarlos al usuario.
+
+## Aquí está un ejemplo paso a paso similar al proceso de encapsulación y uso de PDUs en el modelo OSI:
+
+Ejemplo: Envío de un paquete de regalo
+### Capa Física:
+
+PDU: Bits
+Analogía: La carretera por la que viaja el paquete.
+Función: Transmisión de señales eléctricas, ópticas o de radio que representan bits.
+### Capa de Enlace de Datos:
+
+PDU: Tramas
+Analogía: La caja en la que empaquetas tu regalo para protegerlo durante el transporte.
+Función: Enlace fiable entre dispositivos conectados físicamente, con control de errores y acceso al medio.
+### Capa de Red:
+
+PDU: Paquetes
+Analogía: La dirección que escribes en la caja para que el paquete llegue a la casa correcta.
+Función: Direccionamiento lógico y enrutamiento de paquetes entre diferentes redes.
+### Capa de Transporte:
+
+PDU: Segmentos (para TCP) o Datagramas (para UDP)
+Analogía: La gestión del transporte, asegurándose de que el paquete llegue intacto y a tiempo.
+Función: División de datos en segmentos, control de flujo y corrección de errores de extremo a extremo.
+ ###Capa de Sesión:
+
+PDU: Datos de sesión
+Analogía: La interacción y comunicación entre el remitente y el destinatario para coordinar la entrega.
+Función: Establecimiento, mantenimiento y terminación de sesiones de comunicación.
+### Capa de Presentación:
+
+PDU: Datos de presentación
+Analogía: El envoltorio del regalo, asegurándose de que se presente de manera comprensible y atractiva.
+Función: Formateo, cifrado y compresión de datos.
+### Capa de Aplicación:
+
+PDU: Mensajes
+Analogía: El contenido real del paquete, como el regalo y la tarjeta con el mensaje.
+Función: Interfaz directa con el usuario final y proporciona servicios como el correo electrónico y la transferencia de archivos.

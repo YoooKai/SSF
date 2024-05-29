@@ -334,7 +334,7 @@ Función: Interfaz directa con el usuario final y proporciona servicios como el 
 
 --
 
-### Sistema TCP/IP
+# Sistema TCP/IP
 
 El sistema TCP/IP es válido tanto para redes medianas como grandes, destacándose por su fiabilidad y facilidad para el enrutamiento de paquetes. Recibe su nombre de dos de sus principales protocolos: TCP (Transport Control Protocol) en la capa de transporte e IP (Internet Protocol) en la capa de red.
 

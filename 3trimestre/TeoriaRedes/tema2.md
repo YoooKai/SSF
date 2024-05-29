@@ -128,6 +128,8 @@ En el modelo OSI, la información viaja desde la capa de aplicación de la máqu
 
 # La capa 2, conocida como la capa de enlace de datos
 
+<img src="https://media.fs.com/images/community/upload/kindEditor/202106/04/switch-capa-2-1622789245-HERzwhcYeK.png" width="300">
+
 Se encarga de dos tareas principales para facilitar la comunicación entre dispositivos conectados en una red:
 
 ### Garantizar la fiabilidad de la transmisión a través de un enlace físico determinado: Esto implica asegurarse de que los datos se transmitan correctamente entre los dispositivos. Algunos aspectos clave son:

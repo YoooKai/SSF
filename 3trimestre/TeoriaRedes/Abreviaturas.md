@@ -1,15 +1,3 @@
-## Protocolos de Capa 1 (Acceso a Red)
-- **ARP (Address Resolution Protocol):** Protocolo de Resolución de Direcciones. Permite encontrar la dirección física (MAC) de un dispositivo conocido su dirección IP en una red local.
-  - *Analogía:* Es como consultar un directorio telefónico para encontrar la dirección física de una persona conocida por su número de teléfono.
-
-- **PPP (Point-to-Point Protocol):** Protocolo de Punto a Punto. Permite la comunicación directa entre dos dispositivos a través de un enlace de comunicación.
-  - *Analogía:* Es como tener una conversación telefónica privada entre dos personas sin que nadie más pueda escuchar.
-
-- **Ethernet:** Tecnología común para redes locales. Define cómo se comunican los dispositivos en una red cableada.
-  - *Analogía:* Es como el sistema de carreteras dentro de una ciudad, donde los vehículos (datos) pueden circular de un lugar a otro siguiendo las reglas de tráfico (protocolos).
-
-- **Controladores de Interfaz:** Software o hardware que gestiona la comunicación entre una computadora y una red. Traduce los datos de la computadora al formato requerido por la red y viceversa.
-  - *Analogía:* Son como los traductores que aseguran que dos personas que hablan idiomas diferentes puedan entenderse.
 
 ## Protocolos de Capa 2 (Enlace de Datos)
 - **IEEE 802.3:** Estándar para redes Ethernet cableadas. Define cómo se transmiten los datos en una red Ethernet.
@@ -100,12 +88,7 @@
   - *Analogía:* Es como una carta en un sobre, donde la carta es el mensaje y el sobre contiene la dirección y otros detalles de entrega.
 
 
-# esquema
-## Protocolos de Capa 1 (Acceso a Red)
-- **ARP:** Protocolo de Resolución de Direcciones.
-- **PPP:** Protocolo de Punto a Punto.
-- **Ethernet:** Tecnología común para redes locales.
-- **Controladores de Interfaz:** Software o hardware que gestiona la comunicación entre una computadora y una red.
+
 
 ## Protocolos de Capa 2 (Enlace de Datos)
 - **IEEE 802.3:** Estándar para redes Ethernet cableadas.

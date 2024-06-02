@@ -265,3 +265,44 @@ El **protocolo ICMP (Internet Control Message Protocol)** informa sobre errores 
 
 - **Routers**: Encaminan mensajes seleccionando las mejores rutas.
 - **Tablas de Encaminamiento**: Almacenan la estructura de la red, utilizando prefijos de direcciones IP para determinar rutas.
+
+
+## COMANDOS
+
+### GNU/Linux:
+
+ifconfig
+ifconfig interfaz down
+ifconfig interfaz hw ether XX:XX:XX:XX:XX:XX
+ifconfig interfaz up
+
+ifconfig interfaz promisc
+ifconfig interfaz -promisc
+
+ip
+ip a
+ip link show interfaz
+
+ip link set dev interfaz down
+ip link set dev interfaz address XX:XX:XX:XX:XX:XX
+ip link set dev interfaz up
+
+ethtool
+ping (-t, ...)
+route (-n, ...)
+tracepath (traceroute y tracert)
+arp (-n, ...)
+nslookup
+whois
+
+### MS Windows:
+#### CMD:
+ipconfig
+getmac -v
+netsh
+ 
+#### PowerShell:
+Get-NetIPAddress | select InterfaceAlias, ipv4address
+Get-NetAdapter | select name, macaddress
+Set-NetAdapter -name "Interfaz" -MacAddress "XX-XX-XX-XX-XX-XX"
+Set-NetAdapterAdvancedProperty -Name "Interfaz" -RegistryKeyword "NetworkAddress" -RegistryValue "XXXXXXXXXXXX"

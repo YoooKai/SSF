@@ -414,3 +414,68 @@ Imagina que el sistema TCP/IP es como una autopista bien organizada y eficiente 
 - **Servidores de Correo:** Manejan el envío y recepción de correos electrónicos (SMTP, IMAP, POP3).
 - **Servidores FTP:** Gestionan la transferencia de archivos entre clientes y servidores.
 - **Servidores DNS:** Resuelven nombres de dominio en direcciones IP.
+
+## Direcciones IP Estáticas
+
+### Cuándo Usarlas:
+1. **Servidores:** Si tienes servidores (web, correo, archivos, etc.), necesitas una IP estática para que otros dispositivos puedan encontrarlos consistentemente.
+2. **Dispositivos Críticos:** Equipos como impresoras de red, cámaras de seguridad, y otros dispositivos que deben ser accesibles siempre desde la misma dirección IP.
+3. **Configuraciones de Red Complejas:** En redes donde la administración requiere control preciso sobre cada dispositivo y su configuración de red.
+
+### Ventajas:
+- **Consistencia:** La IP no cambia, facilitando el acceso y la administración.
+- **Facilidad de Administración:** Permite configuraciones más simples en términos de reglas de firewall, port forwarding, etc.
+
+### Desventajas:
+- **Gestión Manual:** Requiere asignación manual de direcciones IP.
+- **Escalabilidad:** Puede ser difícil de gestionar en redes grandes.
+
+## Direcciones IP Dinámicas
+
+### Cuándo Usarlas:
+1. **Dispositivos Clientes:** Computadoras de escritorio, laptops, teléfonos, y tablets que no necesitan una dirección fija.
+2. **Redes con Muchos Dispositivos:** Donde es más eficiente dejar que un servidor DHCP asigne las direcciones automáticamente.
+3. **Situaciones Temporales:** Conexiones temporales como redes de invitados.
+
+### Ventajas:
+- **Simplicidad de Gestión:** Las IPs son asignadas automáticamente, reduciendo la carga de administración.
+- **Flexibilidad:** Facilita la gestión de dispositivos que se conectan y desconectan frecuentemente.
+
+### Desventajas:
+- **Inconsistencia:** La dirección IP puede cambiar, lo cual puede ser un problema para dispositivos que necesitan ser accesibles siempre desde la misma dirección.
+
+## Direcciones IP Privadas
+
+### Cuándo Usarlas:
+1. **Redes Internas:** Dentro de tu hogar, oficina, o cualquier red que no necesita ser accesible desde el exterior.
+2. **Seguridad y Privacidad:** Para mantener los dispositivos ocultos y protegidos de accesos no autorizados desde Internet.
+3. **Conservación de IPs Públicas:** Las IPs privadas ayudan a reducir la necesidad de direcciones IP públicas.
+
+### Ventajas:
+- **Seguridad:** No son accesibles directamente desde Internet.
+- **Reutilización:** Las mismas rangos de IP privadas pueden ser usados en múltiples redes.
+
+### Desventajas:
+- **Requiere NAT:** Necesitas NAT para acceder a Internet, lo cual puede complicar la configuración en ciertos casos.
+
+## Direcciones IP Públicas
+
+### Cuándo Usarlas:
+1. **Acceso desde Internet:** Para cualquier dispositivo o servicio que necesite ser accesible desde cualquier lugar de Internet (servidores web, servicios en la nube, etc.).
+2. **Servicios Alojados Localmente:** Si estás alojando un servidor web, correo, o cualquier otro servicio que otros necesiten acceder desde fuera de tu red.
+
+### Ventajas:
+- **Accesibilidad:** Permiten que tu dispositivo o servicio sea accesible desde cualquier lugar en Internet.
+
+### Desventajas:
+- **Seguridad:** Están expuestas a amenazas externas y requieren medidas de seguridad adicionales.
+- **Escasez y Costo:** Las direcciones IP públicas son limitadas y pueden ser costosas.
+
+## Resumen
+
+- **Estáticas:** Usa IPs estáticas para servidores, dispositivos críticos y configuraciones de red específicas.
+- **Dinámicas:** Usa IPs dinámicas para dispositivos cliente y situaciones donde la simplicidad y flexibilidad son importantes.
+- **Privadas:** Usa IPs privadas dentro de redes internas para mayor seguridad y reutilización eficiente.
+- **Públicas:** Usa IPs públicas para dispositivos y servicios que necesitan ser accesibles desde Internet.
+
+Combinar estos tipos de IPs correctamente según las necesidades de tu red te ayudará a mantener una infraestructura de red eficiente, segura y fácil de gestionar.

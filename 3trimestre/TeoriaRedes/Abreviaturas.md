@@ -1,3 +1,7 @@
+### DMZ:
+Es una red "especial" que se usa para albergar servidores fuera de la red privada.
+Permite conexiones desde y hacia internet, manteniendo así aislada a la red privada del exterior.
+Se suele implementar mediante el uso de uno o dos firewall.
 
 ## Protocolos de Capa 2 (Enlace de Datos)
 - **IEEE 802.3:** Estándar para redes Ethernet cableadas. Define cómo se transmiten los datos en una red Ethernet.

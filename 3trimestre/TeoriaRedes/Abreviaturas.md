@@ -127,7 +127,7 @@ Puede permitir anonimizar las visitas
 
 ## Protocolos de Capa de Aplicación
 - **DNS:** Sistema de Nombres de Dominio.
-- **DHCP:** Protocolo de Configuración Dinámica de Host.
+- **DHCP:** Protocolo de Configuración Dinámica de Host. Se obtiene IP, Servidores DNS y NTP, Máscara, Gateway
 - **SMTP:** Protocolo de Transferencia de Correo Simple.
 - **POP:** Protocolo de Oficina de Correos.
 - **IMAP:** Protocolo de Acceso a Mensajes de Internet.

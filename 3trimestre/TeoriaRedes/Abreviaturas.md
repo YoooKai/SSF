@@ -136,6 +136,8 @@ Puede permitir anonimizar las visitas
 - **HTTP:** Protocolo de Transferencia de Hipertexto.
 - **RPC:** Llamada de Procedimiento Remoto.
 - **SQL:** Lenguaje de Consulta Estructurado.
+- **NTP** Network Time Protocol es un protocolo de Internet para sincronizar los relojes de los sistemas informáticos a través del enrutamiento de paquetes en redes con latencia variable. NTP utiliza UDP como su capa de transporte, usando el puerto 123. Está diseñado para resistir los efectos de la latencia variable.
+- 
 
 ## Otros Términos
 - **PDU:** Unidad de Datos del Protocolo.

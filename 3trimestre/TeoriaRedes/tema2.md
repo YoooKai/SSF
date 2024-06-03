@@ -478,4 +478,3 @@ Imagina que el sistema TCP/IP es como una autopista bien organizada y eficiente 
 - **Privadas:** Usa IPs privadas dentro de redes internas para mayor seguridad y reutilización eficiente.
 - **Públicas:** Usa IPs públicas para dispositivos y servicios que necesitan ser accesibles desde Internet.
 
-Combinar estos tipos de IPs correctamente según las necesidades de tu red te ayudará a mantener una infraestructura de red eficiente, segura y fácil de gestionar.

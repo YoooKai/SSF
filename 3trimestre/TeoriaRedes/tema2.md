@@ -377,3 +377,40 @@ Contiene las aplicaciones de red que utilizan los servicios ofrecidos por las ca
 
 **Analogía:**
 Imagina que el sistema TCP/IP es como una autopista bien organizada y eficiente para el transporte de información. La capa de acceso a la red sería como los vehículos que entran y salen de la autopista, la capa de internet sería como las señales de tráfico que guían el flujo de vehículos, la capa de transporte sería como las carreteras que conectan diferentes ciudades y la capa de aplicación sería como los destinos a los que llegan los vehículos, como las oficinas o los hogares.
+
+
+
+# Dispositivos Importantes por Capa del Modelo OSI
+
+## Capa Física (Capa 1)
+- **Hub:** Un dispositivo simple que permite la conexión de múltiples dispositivos en una red local, repitiendo las señales recibidas a todos los puertos.
+- **Repetidor:** Amplifica o regenera señales de red para extender la distancia de transmisión.
+- **Convertidor de medios:** Convierte señales entre diferentes tipos de medios (por ejemplo, de fibra óptica a cobre).
+
+## Capa de Enlace de Datos (Capa 2)
+- **Switch:** Dispositivo que conecta varios dispositivos en una red local y usa direcciones MAC para enviar datos al destino correcto.
+- **Puente (Bridge):** Conecta dos segmentos de red y filtra el tráfico en función de las direcciones MAC.
+- **NIC (Tarjeta de Interfaz de Red):** Permite la conexión de un dispositivo a la red, gestionando la comunicación en la capa de enlace de datos.
+
+## Capa de Red (Capa 3)
+- **Router:** Dispositivo que enruta paquetes de datos entre diferentes redes basándose en direcciones IP.
+- **Switch de Capa 3:** Combina las funciones de un switch y un router, permitiendo el enrutamiento basado en direcciones IP dentro de la misma red local.
+- **Firewall de Capa 3:** Controla el tráfico de red entrante y saliente basándose en direcciones IP y reglas predefinidas.
+
+## Capa de Transporte (Capa 4)
+- **Firewall de Capa 4:** Controla el tráfico de red basándose en puertos TCP/UDP y direcciones IP.
+- **Load Balancer:** Distribuye el tráfico de red entre múltiples servidores para equilibrar la carga y optimizar la utilización de recursos.
+
+## Capa de Sesión (Capa 5)
+- **Gateways de Aplicación:** Gestionan la comunicación entre aplicaciones en diferentes sistemas, estableciendo, manteniendo y terminando sesiones.
+- **Servidores de Comunicaciones:** Manejan sesiones de aplicaciones específicas, como servidores de videoconferencia.
+
+## Capa de Presentación (Capa 6)
+- **Gateways de Traducción:** Traducen datos entre diferentes formatos de presentación para asegurar la interoperabilidad entre sistemas heterogéneos.
+- **Servidores de Compresión/Encriptación:** Manejan la compresión y encriptación de datos antes de transmitirlos a través de la red.
+
+## Capa de Aplicación (Capa 7)
+- **Servidores Web:** Proporcionan servicios web y entregan contenido a los navegadores de los usuarios.
+- **Servidores de Correo:** Manejan el envío y recepción de correos electrónicos (SMTP, IMAP, POP3).
+- **Servidores FTP:** Gestionan la transferencia de archivos entre clientes y servidores.
+- **Servidores DNS:** Resuelven nombres de dominio en direcciones IP.
